@@ -3,5 +3,6 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('products/', include('products.urls')),  # Make sure this line is correct
+    path('products/', include('products.urls')),
+    path('', redirect_to_products),# Make sure this line is correct
 ]
