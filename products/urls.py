@@ -1,14 +1,13 @@
 from django.urls import path
-from . import views  # import the views module
+from rest_framework.routers import DefaultRouter
+from . import views
 
-app_name = 'products'
+app_name = 'products'  # Add this line
 
-urlpatterns = [
-    path('', views.index, name='index'),  # main index view
-    path('list/', views.product_list, name='product_list'),
-    path('<int:pk>/', views.product_detail, name='product_detail'),
-    path('create/', views.product_create, name='product_create'),
-    path('<int:pk>/edit/', views.product_update, name='product_update'),
-    path('<int:pk>/delete/', views.product_delete, name='product_delete'),
-]
+router = DefaultRouter()
+router.register(r'products', views.ProductViewSet)
+router.register(r'categories', views.CategoryViewSet)
+# ... your other router registrations or urlpatterns
 
+urlpatterns = router.urls
+# ... any other urlpatterns you might have

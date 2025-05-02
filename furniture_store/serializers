@@ -1,0 +1,22 @@
+from rest_framework import serializers
+from .models import Product, Category  # Update with your actual models
+
+class CategorySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Category
+        fields = '__all__'
+
+class ProductSerializer(serializers.ModelSerializer):
+    # If you want to display the full category information rather than just the ID
+    category = CategorySerializer(read_only=True)
+    # Also include the category ID for write operations
+    category_id = serializers.PrimaryKeyRelatedField(
+        queryset=Category.objects.all(),
+        source='category',
+        write_only=True,
+        required=False
+    )
+
+    class Meta:
+        model = Product
+        fields = ['id', 'name', 'description', 'price', 'image', 'category', 'category_id']
