@@ -2,19 +2,24 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import logo from './logo.svg';
 import './App.css';
+
 import HomePage from './homepage';
+import Navbar from './Navbar';
 import Footer from './Footer';
-import Navbar from './Navbar'; // ✅ Import Navbar
+import Chatbot from './components/Chatbot';   // ⬅️ import the widget
 
 function App() {
   return (
     <Router>
+      {/* layout wrapper */}
       <>
-        {/* ✅ Sticky top navbar */}
+        {/* ── Sticky top bar ── */}
         <Navbar />
 
+        {/* ── Route views ── */}
         <Routes>
           <Route path="/" element={<HomePage />} />
+
           <Route
             path="/original"
             element={
@@ -38,11 +43,15 @@ function App() {
           />
         </Routes>
 
-        {/* ✅ Footer appears below all pages */}
+        {/* ── Global footer ── */}
         <Footer />
+
+        {/* ── Floating chatbot (rendered once) ── */}
+        <Chatbot />
       </>
     </Router>
   );
 }
 
 export default App;
+
