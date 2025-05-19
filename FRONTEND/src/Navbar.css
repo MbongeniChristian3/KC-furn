@@ -4,8 +4,14 @@
   align-items: center;
   padding: 16px;
   background-color: #f9f9f9;
+
+  /* --- sticky magic --- */
+  position: sticky;   /* keeps the bar in view */
+  top: 0;             /* stick to very top of the viewport */
+  z-index: 1000;      /* sits above other content while scrolling */
 }
 
+/* everything else stays the same */
 .navbar-left {
   margin-bottom: 8px;
 }
@@ -38,7 +44,6 @@
   cursor: pointer;
 }
 
-/* Categories horizontal */
 .nav-links {
   list-style: none;
   padding: 0;
@@ -48,7 +53,7 @@
   gap: 24px;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap; /* optional for responsiveness */
+  flex-wrap: wrap;
 }
 
 .nav-links li a {
@@ -62,3 +67,4 @@
 .nav-links li a:hover {
   color: #000;
 }
+
