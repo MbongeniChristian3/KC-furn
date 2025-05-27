@@ -6,17 +6,17 @@ import './App.css';
 import HomePage from './homepage';
 import Navbar from './Navbar';
 import Footer from './Footer';
-import Chatbot from './components/Chatbot';   // ⬅️ import the widget
+import Chatbot from './components/Chatbot'; 
+
+// Import the new PrivacyPolicy component
+import PrivacyPolicy from './pages/PrivacyPolicy';
 
 function App() {
   return (
     <Router>
-      {/* layout wrapper */}
       <>
-        {/* ── Sticky top bar ── */}
         <Navbar />
 
-        {/* ── Route views ── */}
         <Routes>
           <Route path="/" element={<HomePage />} />
 
@@ -41,12 +41,12 @@ function App() {
               </div>
             }
           />
+
+          {/* New route for Privacy Policy */}
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         </Routes>
 
-        {/* ── Global footer ── */}
         <Footer />
-
-        {/* ── Floating chatbot (rendered once) ── */}
         <Chatbot />
       </>
     </Router>
