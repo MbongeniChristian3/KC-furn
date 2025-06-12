@@ -23,7 +23,7 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="navbar-left">
-        <div className="nav-logo">🪑 KC FURN</div>
+        <div className="nav-logo">  KC FURN</div>
       </div>
 
       {/* Search bar */}

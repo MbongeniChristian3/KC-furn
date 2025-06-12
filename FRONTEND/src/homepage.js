@@ -2,13 +2,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './homepage.css';
+import furnitureHeroImage from './assets/furniture-hero.png'
 
 const HomePage = () => {
   return (
     <div className="home-page">
       <div className="hero">
-        <h1>Welcome to KC Furniture</h1>
         <p>Discover stylish comfort for every room</p>
+        {/* 2. Add the image tag here */}
+        <img src={furnitureHeroImage} alt="Stylish furniture collection" className="hero-image" />
         <Link to="/products" className="btn btn-primary">Shop Now</Link>
       </div>
 
