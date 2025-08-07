@@ -1,23 +1,25 @@
 .site-footer {
-    background-color: #d0c6c6;
-    padding: 20px;
-    text-align: center;
-    border-top: 1px solid #ddd;
-  }
-  
-  .footer-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-  }
-  
-  .privacy-link {
-    color: #555;
-    text-decoration: none;
-    font-size: 14px;
-  }
-  
-  .privacy-link:hover {
-    text-decoration: underline;
-  }  
+  background-color: #000;      /* black footer */
+  padding: 20px;
+  text-align: center;
+  border-top: 1px solid #222;  /* slightly lighter line so it’s visible on black */
+  color: #fff;                 /* white text throughout the footer */
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+/* make the link white and keep the hover underline */
+.privacy-link {
+  color: #fff;                 /* white link text */
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.privacy-link:hover {
+  text-decoration: underline;
+}

@@ -35,9 +35,11 @@ MIDDLEWARE = [
 
 # Allow requests from your React development server
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",  # React default port
+    "http://localhost:8000",  # React default port
     # Add production URLs later
 ]
+
+CORS_ALLOW_ALL_ORIGINS = True
 
 ROOT_URLCONF = 'furniture_store.urls'
 

@@ -2,19 +2,24 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import logo from './logo.svg';
 import './App.css';
+
 import HomePage from './homepage';
+import Navbar from './Navbar';
 import Footer from './Footer';
-import Navbar from './Navbar'; // ✅ Import Navbar
+import Chatbot from './components/Chatbot'; 
+
+// Import the new PrivacyPolicy component
+import PrivacyPolicy from './pages/PrivacyPolicy';
 
 function App() {
   return (
     <Router>
       <>
-        {/* ✅ Sticky top navbar */}
         <Navbar />
 
         <Routes>
           <Route path="/" element={<HomePage />} />
+
           <Route
             path="/original"
             element={
@@ -36,13 +41,17 @@ function App() {
               </div>
             }
           />
+
+          {/* New route for Privacy Policy */}
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         </Routes>
 
-        {/* ✅ Footer appears below all pages */}
         <Footer />
+        <Chatbot />
       </>
     </Router>
   );
 }
 
 export default App;
+
