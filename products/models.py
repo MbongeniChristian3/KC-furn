@@ -1,4 +1,4 @@
-# In products/models.py
+# products/models.py
 from django.db import models
 
 class Category(models.Model):
@@ -33,3 +33,16 @@ class ProductImage(models.Model):
     
     def __str__(self):
         return f"Image for {self.product.name}"
+        
+# New Variation model
+class Variation(models.Model):
+    product = models.ForeignKey(Product, related_name='variations', on_delete=models.CASCADE)
+    name = models.CharField(max_length=100)  # e.g., "Size", "Color"
+    value = models.CharField(max_length=100) # e.g., "Small", "Red"
+    price_extra = models.DecimalField(max_digits=10, decimal_places=2, default=0.00)
+    
+    class Meta:
+        unique_together = ('product', 'name', 'value')
+        
+    def __str__(self):
+        return f"{self.name}: {self.value}"
